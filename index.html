@@ -2,18 +2,47 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="mystyle.css">
-		 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
 		<title>Messenger</title>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+		   function signUp(){
+			  $("#login").hide();
+			  $("#username").before($("#message"));
+		      $("#username").attr("placeholder", "Create New Username");
+			  $("#password").attr("placeholder", "Set up Password");
+			  $("#confirmPassword").show();
+			  $("#create").show();
+			  $("#message").show();
+		    }
+        </script>
+		
+		<script>
+		   function signIn(){
+			  $("#message").hide();
+			  $("#confirmPassword").hide();
+			  $("#create").hide();
+		      $("#username").attr("placeholder", "Username");
+			  $("#password").attr("placeholder", "Enter Password");
+			  $("#login").show();
+		    }
+        </script>
 	</head>
 	<body>
 		<div class="centered">
-			<button type="button">SIGN IN</button><button type="button">SIGN UP</button>
+			<button type="button" id="signIn" onclick="signIn()">SIGN IN</button><button type="button" id="signUp" onclick="signUp()">SIGN UP</button>
 			<br>
-			<input type="text" placeholder="Username" name="username" required>
+			<input type="text" placeholder="Username" id="username" required>
 			<br>
-			<input type="password" placeholder="Enter Password" name="password" required>
+			<input type="password" placeholder="Enter Password" id="password" required>
 			<br>
-			<button type="submit">Login</button>
-		</div>
+			<button type="submit" id="login">Login</button>
+			
+			<input type="password" placeholder="Confirm Password" id="confirmPassword" required hidden>
+			<br>
+			<button type="submit" id="create" hidden>Create</button>
+			<p id="message" style="font-size:45%;" hidden>Create a New Account</p>
+		</div>		
 	</body>
 </html>
