@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<style>	
+			
+			textarea {
+				height: 90%;
+				width: 100%;
+				resize: none;
+			}
+			
+			input[type="text"] {
+				width: 88%;
+			}
+	
+			
+			.right-side {
+				float: right;
+			}
+		
+			.top-wrapper {
+				display: grid;
+				grid-template-columns: 25% 75%;
+			}
+			
+			.top-wrapper > div {
+				background: #abc;
+				padding: 1em;
+			}
+			.top-wrapper >div:nth-child(odd){
+				background: #aba;
+			}
+			
+			.main-wrapper {
+				display: grid;
+				grid-template-columns: 25% 50% 25%;
+				height: 100vh;
+			}
+			.main-wrapper > div {
+				background: #eee;
+				padding: 1em;
+			}
+			.main-wrapper >div:nth-child(odd){
+				background: #ddd;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="top-wrapper">
+			<div class>
+				Messenger
+				<button type="button" class="right-side">New Message</button>
+			</div>
+			<div>
+				Container 2
+			</div>
+		</div>
+		<div class="main-wrapper">
+			<div class>
+				Container 1
+			</div>
+			<div class>
+				<textarea readonly></textarea>
+				<br>
+				<input type="text" placeholder="Write a message">
+				<input type="submit" value="submit">
+			</div>
+			<div class>
+				Container 3
+			</div>
+		</div>
+	</body>
+
+</html>
