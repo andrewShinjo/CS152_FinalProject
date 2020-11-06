@@ -6,6 +6,7 @@
 		<title>Messenger</title>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="db_connection.js"></script>
 		<script>
 		   function signUp(){
 			  $("#login").hide();
@@ -37,11 +38,11 @@
 			<br>
 			<input type="password" placeholder="Enter Password" id="password" required>
 			<br>
-			<button type="submit" id="login">Login</button>
+			<button type="submit" id="login" onclick="sign_in()">Login</button>
 			
 			<input type="password" placeholder="Confirm Password" id="confirmPassword" required hidden>
 			<br>
-			<button type="submit" id="create" hidden>Create</button>
+			<button type="submit" id="create" onclick="sign_up()" hidden>Create</button>
 			<p id="message" style="font-size:45%;" hidden>Create a New Account</p>
 		</div>		
 	</body>

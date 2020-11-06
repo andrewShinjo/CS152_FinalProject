@@ -2,14 +2,11 @@
 <html>
 
 	<head>
+	
+		<script src="chatcontroller.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		
 		<style>	
-			
-			textarea {
-				height: 90%;
-				width: 100%;
-				resize: none;
-			}
-			
 			input[type="text"] {
 				width: 88%;
 			}
@@ -35,7 +32,7 @@
 			.main-wrapper {
 				display: grid;
 				grid-template-columns: 25% 50% 25%;
-				height: 100vh;
+				height: 90vh;
 			}
 			.main-wrapper > div {
 				background: #eee;
@@ -44,32 +41,36 @@
 			.main-wrapper >div:nth-child(odd){
 				background: #ddd;
 			}
+			
+			.message {
+				border: 2px solid #dedede;
+				background-color: #f1f1f1;
+				border-radius: 5px;
+				padding: 10px;
+				margin: 10px 0;
+			}
+			
+			.scrollable {
+				overflow: scroll;
+			}
 		</style>
 	</head>
 
 	<body>
-		<div class="top-wrapper">
-			<div class>
-				Messenger
-				<button type="button" class="right-side">New Message</button>
-			</div>
-			<div>
-				Container 2
-			</div>
-		</div>
 		<div class="main-wrapper">
-			<div class>
+			<div>
 				Container 1
 			</div>
-			<div class>
-				<textarea readonly></textarea>
-				<br>
-				<input type="text" placeholder="Write a message">
-				<input type="submit" value="submit">
+			<div class="scrollable">
+				
 			</div>
-			<div class>
+			<div>
 				Container 3
 			</div>
+		</div>
+		<div>
+			<input type="text" placeholder="Write a message" id="myMessage">
+			<button type="button" onclick="appendText();" value="submit">Send</button>
 		</div>
 	</body>
 
